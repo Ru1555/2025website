@@ -1,160 +1,92 @@
-/*
-Red Lantern redesign
-HFWD Chapter 1
-*/
-
-/*
-The font size here is set to 62.5% so that
-1em = 10px. This makes adjusting our typography
-a little easier
-*/
 body {
-	margin: 0 auto;
-	width: 800px;
-	padding: 0;
-	background: #6e0427 url('../images/body_bg.gif') repeat-x top;
-	font-family: Helvetica, sans-serif;
-	font-size: 62.5%;
-	color: #333;
-}
-
-h1, h2, p, ul, li {
 	margin: 0;
+	font-family: Arial, sans-serif;
+	background-color: #0d72b9; /* 外部深藍背景 */
+  }
+  
+  .container {
+	background: #ffffff;
+	border: 20px solid #cdeeff;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	margin-top: 40px;
+	margin-bottom: 40px;
+	margin: 80px auto;
 	padding: 0;
-}
-
-p {
-	font-size: 1.4em;
-	line-height: 1.4em;
-}
-
-ul {
-	list-style-type: none;
-}
-
-a:link {
-	color: #333;
-	background: #eee;
-}
-a:visited {
-	color: #ff0000;
-	background: #eee;
-}
-
-/* This rule adds a nice style to our ampersands */
-span.amp {
-	font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
-	font-weight: normal;
-	font-style: italic;
-}
-
- 
-#masthead {
-	margin: 0 auto ;
-	margin-top: 20px;
-	width: 800px;
-	color: #fff;
-}
-
-#masthead h1 {
-	float: left;
-}
-
-#nav {
-	float: right;
-	margin: 50px 10px 0 0;
-	font-size: 1.4em;
-}
-
- 
-#nav li {
-	display: inline;
-	margin: 0 0 0 20px;
-}
-
-#nav li a {
-	color: #fff;
-	text-decoration: none;
-	background: none;
-}
-
-/*
-Because the header content is outside the wrap <div>,
-we need to use the same "margin: 0 auto" trick to center
-the layout
-*/
-#mainContent {
-	clear: both;
-	margin: 0 auto;
-	padding: 10px;
-	width: 800px;
-	background: #fff;
-	border: 10px solid #5c0505;
-}
-
-#header img {
-	border: 10px solid #ccc;
-}
-
-#header h1 {
-	font-size: 2em;
-	margin: 10px 0 0 0;
-	padding: 10px;
-	text-align: center;
-	background: url('../images/tagline_bg.gif') repeat-x;
-}
-
-#content, #sidebar {
-	width: 360px;
-	margin: 20px 0 20px 0;
-	padding: 10px;
-}
-
-#content {
-	float: right;
-}
-
-#content h2 {
-	font-size: 2.4em;
-	margin: 0 0 10px 0;
-}
-
-#content p {
-	margin: 0 0 10px 0;
-}
-
-#link-list {
-	margin: 20px 0 0 0;
-	font-size: 1.4em;
-}
-
-#link-list li {
-	margin: 0 0 10px 0;
-}
-
-#sidebar {
-	float: left;
-	background: #eee;
-}
-
-#sidebar h2 {
+	position: relative;
+  }
+  
+  
+  .site-header {
+  	color: white;
+  	padding: 20px 25px;
+  	z-index: 1000;          /* 確保不被圖片或其他元素蓋住 */
+  	width: 100%;            /* 根據內容自動寬度 */
+	box-sizing: border-box; /* 避免 padding 影響寬度 */
+  }
+  
+  .site-header h1 {
+	margin: 0;
+	font-size: 36px;
 	font-weight: bold;
-	border-bottom: 1px solid #ccc;
-	margin: 0 0 20px 0;
-	padding: 5px;
-}
-
-#port li {
-	margin: 0 10px 20px 0;
-	float: left;
-	border: 5px solid #ddd;
-}
-
-#footer {
-	clear: both;
-	background: #eee;
-	padding: 10px;
-	border-top: 2px solid #ddd;
+	letter-spacing: 1px;
+	position: fixed;        /* 固定在畫面，不隨滾動或縮放改變 */
+	top: 30px;              /* 距離視窗上方 20px */
+ 	left: 500px;             /* 距離視窗左側 30px */
+	width: 100%;
+	z-index: 1000;          /* 確保在圖片上層 */
+  	box-sizing: border-box; /* 避免 padding 影響寬度 */
+  }
+  
+  .site-header p {
+	margin: 6px 0 0;        /* 與上方標題保持距離 */
+	font-size: 14px;        /* 調整字體大小 */
+	letter-spacing: 1px;    /* 文字間距 */
+	position: fixed;     /* 固定在畫面，不隨滾動或縮放改變 */
+	top: 70px;              /* 距離視窗上方 20px */
+ 	left: 500px;            /* 距離視窗左側 30px */
+	width: 100%;
+	z-index: 1000;          /* 確保在圖片上層 */
+  	box-sizing: border-box; /* 避免 padding 影響寬度 */
+  }
+  
+  /* Banner 圖片 */
+  .banner img {
+	width: 100%;
+	display: block;
+  }
+  
+  /* 導覽列 */
+  nav {
+	background: #00a9e0;
+  }
+  
+  nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 10px 0;
+	display: flex;
+	justify-content: center;
+  }
+  
+  nav ul li {
+	margin: 0 20px;
+  }
+  
+  nav ul li a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+	text-decoration: underline;
+  }
+  
+  /* 頁尾 */
+  footer {
+	background: #0090d7;
+	color: white;
 	text-align: center;
-	color: #777;
-}
+	padding: 15px;
+  }
+  
