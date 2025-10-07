@@ -1,10 +1,13 @@
+/* ==============================
+   🔷 全站基礎設定
+============================== */
 body {
 	margin: 0;
 	font-family: Arial, sans-serif;
 	background-color: #0d72b9; /* 外部深藍背景 */
-  }
-  
-  .container {
+}
+
+.container {
 	background: #ffffff;
 	border: 20px solid #cdeeff;
 	box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -13,80 +16,294 @@ body {
 	margin: 80px auto;
 	padding: 0;
 	position: relative;
-  }
-  
-  
-  .site-header {
-  	color: white;
-  	padding: 20px 25px;
-  	z-index: 1000;          /* 確保不被圖片或其他元素蓋住 */
-  	width: 100%;            /* 根據內容自動寬度 */
-	box-sizing: border-box; /* 避免 padding 影響寬度 */
-  }
-  
-  .site-header h1 {
+}
+
+/* ==============================
+   🔷 頁首 Header
+============================== */
+.site-header {
+	color: white;
+	padding: 20px 25px;
+	z-index: 1000;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.site-header h1 {
 	margin: 0;
 	font-size: 36px;
 	font-weight: bold;
 	letter-spacing: 1px;
-	position: fixed;        /* 固定在畫面，不隨滾動或縮放改變 */
-	top: 30px;              /* 距離視窗上方 20px */
- 	left: 500px;             /* 距離視窗左側 30px */
+	position: fixed;
+	top: 30px;
+	left: 500px;
 	width: 100%;
-	z-index: 1000;          /* 確保在圖片上層 */
-  	box-sizing: border-box; /* 避免 padding 影響寬度 */
-  }
-  
-  .site-header p {
-	margin: 6px 0 0;        /* 與上方標題保持距離 */
-	font-size: 14px;        /* 調整字體大小 */
-	letter-spacing: 1px;    /* 文字間距 */
-	position: fixed;     /* 固定在畫面，不隨滾動或縮放改變 */
-	top: 70px;              /* 距離視窗上方 20px */
- 	left: 500px;            /* 距離視窗左側 30px */
+	z-index: 1000;
+	box-sizing: border-box;
+}
+
+.site-header p {
+	margin: 6px 0 0;
+	font-size: 14px;
+	letter-spacing: 1px;
+	position: fixed;
+	top: 70px;
+	left: 500px;
 	width: 100%;
-	z-index: 1000;          /* 確保在圖片上層 */
-  	box-sizing: border-box; /* 避免 padding 影響寬度 */
-  }
-  
-  /* Banner 圖片 */
-  .banner img {
+	z-index: 1000;
+	box-sizing: border-box;
+}
+
+/* ==============================
+   🔷 Banner 圖片
+============================== */
+.banner img {
 	width: 100%;
 	display: block;
-  }
-  
-  /* 導覽列 */
-  nav {
+}
+
+/* ==============================
+   🔷 導覽列 Navigation
+============================== */
+nav {
 	background: #00a9e0;
-  }
-  
-  nav ul {
+}
+
+nav ul {
 	list-style: none;
 	margin: 0;
 	padding: 10px 0;
 	display: flex;
-	justify-content: center;
-  }
-  
-  nav ul li {
+	justify-content: left;
+}
+
+nav ul li {
 	margin: 0 20px;
-  }
-  
-  nav ul li a {
+}
+
+nav ul li a {
 	color: white;
 	text-decoration: none;
 	font-weight: bold;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
+
+/* ==============================
+   🔷 標題上、圖片左邊＋文字右邊 (三欄橫排)
+============================== */
+.top-boxes {
+	background: #fff;
+	padding: 40px 0;
   }
   
-  nav ul li a:hover {
+  .info-box {
+	text-align: left;
+  }
+  
+  .info-title {
+	color: #00a2e8;
+	font-size: 30px;
+	margin-bottom: 15px;
+	font-weight: 700;
+  }
+  
+  .info-row {
+	display: flex;
+	align-items: flex-start;            
+  }
+  
+  .info-icon {
+	width: 50px;
+	height: auto;
+	margin-right: 15px;
+  }
+  
+  .info-row p {
+	margin: 0;
+	margin-left: 15px; /* 與圖片保持距離 */
+	color: #333;
+	font-size: 14px;
+	line-height: 1.6;
+  }
+  
+  /* 響應式 (手機直排) */
+  @media (max-width: 768px) {
+	.info-row {
+	  flex-direction: column;
+	  align-items: center;
+	  text-align: center;
+	}
+  /*圖片設定*/
+	.info-icon {
+	  margin-right: 0;
+	  margin-bottom: 10px;
+	}
+  }
+  
+  
+
+/* ==============================
+   🔷 共用標題樣式
+============================== */
+.section-title {
+	color: #00a2e8;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+/* ==============================
+   ⭐ 中間區 (Left + Right)
+   ── 左右分開兩塊、固定在白底內、不會超出
+============================== */
+.middle {
+	display: flex;
+	flex-wrap: wrap;        /* 小螢幕自動換行 */
+	gap: 20px;              /* 左右區塊間距 */
+	padding: 40px;          /* 與 container 內壁距離 */
+	box-sizing: border-box; /* 確保 padding 不影響排版 */
+}
+
+/* 左側區域 */
+.left-box {
+	background-color: #e5f7ff;
+	border: 1px solid #ddd;
+	flex: 2;                /* 左邊較寬 */
+	min-width: 300px;       /* 最小寬度 */
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+/* ⭐ 左側區塊圖片黑框設定 */
+.left-box img {
+	border: px solid #000;   /* 黑色邊框 */
+	box-sizing: border-box;   /* 避免邊框影響版面 */
+}
+
+.left-box p {
+	font-size: 14px;
+	color: #333;
+	margin: 0;
+}
+
+.left-box a {
+	color: #00a2e8;
+	text-decoration: none;
+}
+
+.left-box a:hover {
+	text-decoration: underline;
+}
+
+/* 右側區域 */
+.right-box {
+	background-color: #e5f7ff; /* 淺藍色 */
+	border: 1px solid #ddd;
+	flex: 1;                   /* 右邊較窄 */
+	min-width: 250px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.right-box ul {
+	padding-left: 10px;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #333;
+}
+
+.right-box li {
+	margin-bottom: 4px;
+}
+
+/* Read More 連結 */
+.read-more {
+	color: #00a2e8;
+	font-weight: bold;
+	margin-top: 10px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.read-more:hover {
+	text-decoration: underline;
+}
+
+/* ⭐ 響應式 (手機 / 平板) */
+@media (max-width: 768px) {
+	.middle {
+		flex-direction: column;
+		align-items: center;
+	}
+	.left-box, .right-box {
+		width: 100%;
+	}
+}
+
+/* === 下方整體區塊 === */
+.bottom {
+	padding: 30px;
+	color: #333;
+	font-family: Arial, sans-serif;
+  }
+  
+  /* === 左右欄設定 === */
+  .bottom h2 {
+	color: #0080c0;
+	font-size: 30px;
+	margin-bottom: 15px;
+	font-weight: 700;
+  }
+  
+  .bottom p {
+	font-size: 14px;
+	line-height: 1.6;
+	margin-bottom: 15px;
+  }
+  
+  /* === READ MORE 強調樣式 === */
+  .bottom .text-primary {
+	color: #0078d7 !important;
+	cursor: pointer;
+	transition: color 0.2s;
+	box-sizing: border-box;
+  }
+  
+  .bottom .text-primary:hover {
+	color: #005a9e;
 	text-decoration: underline;
   }
   
-  /* 頁尾 */
-  footer {
+  /* === 圖片樣式 === */
+  .bottom img {
+	border-radius: 6px;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  
+  /* === 響應式微調 (手機版時改垂直排列) === */
+  @media (max-width: 768px) {
+	.bottom {
+	  text-align: center;
+	}
+  
+	.bottom img {
+	  margin: 0 auto 15px;
+	}
+  }
+  
+  .bottom .col-md-8 {
+  padding-left: 40px;
+}
+
+
+/* ==============================
+   🔷 頁尾 Footer
+============================== */
+footer {
 	background: #0090d7;
 	color: white;
 	text-align: center;
 	padding: 15px;
-  }
-  
+}
