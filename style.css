@@ -12,7 +12,7 @@ body {
 	margin: 0 auto;
 	width: 800px;
 	padding: 0;
-	/* background: #6e0427 url('../images/body_bg.gif') repeat-x top; */
+	background: #6e0427 url('../images/body_bg.gif') repeat-x top;
 	background-image: linear-gradient(to bottom, #681304b0, rgba(49, 2, 2,0.5));
 	font-family: Helvetica, sans-serif;
 	font-size: 62.5%;
@@ -37,9 +37,14 @@ a:link {
 	color: #333;
 	background: #eee;
 }
+
 a:visited {
 	color: #ff0000;
 	background: #eee;
+}
+
+a:hover {
+	color:red;
 }
 
 /* This rule adds a nice style to our ampersands */
