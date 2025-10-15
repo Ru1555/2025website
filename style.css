@@ -10,10 +10,10 @@ a little easier
 */
 body {
 	margin: 0 auto;
-	width: 800px;
+	width: 100%;
 	padding: 0;
-	background: #6e0427 url('../images/body_bg.gif') repeat-x top;
-	background-image: linear-gradient(to bottom, #681304b0, rgba(49, 2, 2,0.5));
+	/* background: #fa0e5d url('../images/body_bg.gif') repeat-x top; */
+	background-image: linear-gradient(to bottom, #7e2111b0, rgba(49, 2, 2,0.5));
 	font-family: Helvetica, sans-serif;
 	font-size: 62.5%;
 	color: #333;
