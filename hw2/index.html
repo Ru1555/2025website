@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoundPhoenix Layout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="text-light py-3 position-relative">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-5">
+      <h1 class="logo-text m-0">SOUND<span>PHOENIX</span></h1>
+    </div>
+
+    <!-- 🔶 新增：浮動 Login Box -->
+    <div class="login-box position-absolute top-0 end-0 mt-4 me-5">
+      <div class="login-inner p-3">
+        <h6 class="text-warning mb-3">Login</h6>
+        <form>
+          <div class="input-group input-group-sm mb-2">
+            <input type="text" class="form-control" placeholder="fERx">
+            <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <input type="password" class="form-control" placeholder="********">
+            <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+          </div>
+          <ul class="list-unstyled small login-links mb-0">
+            <li><a href="#">• Register</a></li>
+            <li><a href="#">• Request Password</a></li>
+            <li><a href="#">• Login</a></li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- TOP SECTION -->
+  <section class="top-section py-3">
+    <div class="container-fluid px-5">
+      <div class="row">
+
+        <!-- Left: Show / Playlist -->
+        <div class="col-md-6">
+          <div class="box p-3">
+            <h5>Aktuelle Show</h5>
+            <p>Maximum Drum & Bass<br>With DJ FitZu live tonight!</p>
+          </div>
+        </div>
+
+        <!-- Right: DJ Info -->
+        <div class="col-md-6">
+          <div class="box p-3">
+            <h5>Jetzt läuft:</h5>
+            <p>Track: "RightforSummer"</p>
+            <p>Next: "Zelda Theme"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="container-fluid px-5 my-4">
+    <div class="row">
+
+      <!-- LEFT NAV -->
+      <aside class="col-md-3">
+        <div class="side-box p-3 mb-3">
+          <h5>Main Navi</h5>
+          <ul class="list-unstyled">
+            <li>Home</li>
+            <li>News</li>
+            <li>Events</li>
+            <li>Soundboard</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="side-box p-3">
+          <h5>Interactive</h5>
+          <ul class="list-unstyled">
+            <li>Forum</li>
+            <li>Chat</li>
+            <li>Gallery</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- CENTER CONTENT -->
+      <section class="col-md-6">
+        <div class="content-box p-4">
+          <h5>Design at its Best</h5>
+          <p>Here we go again — SoundPhoenix returns with a refreshed layout and clean structure.
+          This section will hold the main article or update post content.</p>
+        </div>
+      </section>
+
+      <!-- RIGHT SIDEBAR -->
+       
+        <div class="side-box p-3">
+          <h5>News</h5>
+          <ul class="list-unstyled">
+            <li>New playlist released</li>
+            <li>Live DJ Event Tonight</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-3">
+    <small>© 2025 SoundPhoenix. All rights reserved.</small>
+  </footer>
+
+</body>
+</html>
