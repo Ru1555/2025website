@@ -9,14 +9,21 @@
 </head>
 
 <body>
-<div id="myapp1">
+    <section id ="sidebar">
+       <h2>{{title}}</h2>
+       <ul id = "port">
+            <li v for = "item in port"><img : src = "'images/'+item.img" :alt = "item.alt"></li>
+       </ul>
+    </section>
+<!-- <div id="myapp1">
     {{msg}}
     <div>
         {{msg2}}
     </div>
     <img v-bind:src="msg2" alt="">
-    <img :src="msg3" alt="">
-</div>
+    <img :src="'images/'+msg3" alt="" v-show="showMsg3">
+    <img v-for="item in aryImg":src="'images/'+item" alt="">
+</div> -->
 </body>
 <script>
   var vueApp=Vue.createApp({
@@ -24,10 +31,26 @@
         return{
             msg: "Hello!",
             msg2: "images/tokyo.jpg",
-            msg3: "foobar.jpg"
+            msg3: "foobar.jpg",
+            showMsg3: true,
+            aryImg: ["a2g.jpg","markinjapan.jpg","rpm.jpg"]
         }
     }
-  }).mount("#myapp1");
+  }).mount("#sidebar");
 
+var vueApp2 = Vue.createApp({
+    data(){
+        return{
+            title: "Our Work",
+            port: [
+                { alt: "comp0", img: "markinjapan.jpg" },
+                { alt: "comp1", img: "a2g.jpg" },
+                { alt: "comp2", img: "foobar.jpg" },
+                { alt: "comp3", img: "rpm.jpg" },
+                { alt: "comp4", img: "tokyo.jpg" }
+            ]
+        }
+    }
+}).mount("#sidebar");
 </script>
 </html>
