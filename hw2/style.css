@@ -1,150 +1,192 @@
 body {
-    background-color: #1b1916;
-    color: #eee;
-    font-family: "Segoe UI", sans-serif;
-    overflow-x: auto; /* 若視窗太小，允許橫向捲動 */
-    min-height: 100vh;
-  }
+  background-color: #1b1916;
+  color: #eee;
+  font-family: "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
 
-  /* Header */
-  header {
-    background-color: #111;
-    background: transparent; /* 透明，露出 body 背景 */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-  }
-  
-  .logo-text {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #f1b50a;
-    margin-top: 180px; /* 根據 login 高度調整，100~200px 看實際狀況 */
-  }
-  .logo-text span {
-    color: #c99440;
-  }
-  
-  /* Login box 在右上角 */
-  .login-box {
-    position: absolute;
-    width: 200px;
-    margin-top: 100px;    /* 調整垂直位置 */
-    margin-right: 200px;   /* 調整水平位置 */
-  }
+/* ==============================
+   🔶 上半部（Hero 區域）
+============================== */
+.hero-section {
+  position: relative;
+  background: linear-gradient(180deg, #1b1916 0%, #111 100%);
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
 
-  .login-inner {
-    background: linear-gradient(180deg, #4a4238 0%, #2f2a25 100%);
-    border: 1px solid #8b6f2e;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(255, 200, 80, 0.2);
-    color: #fff;
-  }
-  
-  .login-inner h6 {
-    border-bottom: 1px solid #a07a2a;
-    padding-bottom: 10px; /* 標題下方間距 */
-    margin-bottom: 8px; /* 標題與內容間距 */
-    font-weight: bold; /* 加粗標題 */
-    letter-spacing: 0.5px;
-  }
-  
-  .login-inner .form-control {
-    background-color: #3a332d;
-    border: 1px solid #5c4b3b;
-    color: #f5e8c6;
-  }
-  
-  .login-inner .input-group-text {
-    background-color: #3a332d;
-    border: 1px solid #5c4b3b;
-    color: #c29b47;
-  }
-  
-  .login-inner .form-control::placeholder {
-    color: #bca780;
-  }
-  
-  .login-links a {
-    color: #d6c28a;
-    text-decoration: none;
-  }
-  
-  .login-links a:hover {
-    color: #ffc107;
-    text-decoration: underline;
-  }
+/* 標題（雙色） */
+.logo-text {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #f1b50a;
+  text-shadow: 0 0 10px rgba(255, 200, 80, 0.4);
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+.logo-text span {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
 
-  .login-box input {
-    background-color: #2b2924;
-    border: none;
-    color: #fff;
-    font-size: 0.85rem;
-  }
-  .login-box input:focus {
-    outline: none;
-    box-shadow: 0 0 5px #f1b50a;
-  }
-  .login-box button {
-    background-color: #f1b50a;
-    border: none;
-    color: #111;
-    font-weight: bold;
-    font-size: 0.85rem;
-  }
-  .login-box a {
-    color: #aaa;
-    text-decoration: none;
-  }
-  .login-box a:hover {
-    color: #f1b50a;
-  }
-  
-  /* Top section */
-  .top-section {
-    background-color: #2b2924;
-  }
-  .top-section .box {
-    background-color: #3a3833;
-    border: 1px solid #555;
-    border-radius: 5px;
-  }
-  
-  /* Main layout */
-  .side-box,
-  .content-box {
-    background-color: #2e2b27;
-    border: 1px solid #444;
-    border-radius: 5px;
-  }
-  .side-box h5,
-  .content-box h5 {
-    color: #f1b50a;
-    border-bottom: 1px solid #555;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.25rem;
-  }
-  
-  /* 左邊選單 */
-  .side-box ul li {
-    padding: 4px 0;
-    cursor: pointer;
-  }
-  .side-box ul li:hover {
-    color: #f1b50a;
-  }
-  
-  /* 中間內容 */
-  .content-box {
-    min-height: 300px;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #111;
-    color: #aaa;
-    border-top: 1px solid #333;
-  }
-  
+/* Login 浮動區 */
+.login-box {
+  position: absolute;
+  top: 40px;
+  right: 80px;
+  width: 200px;
+}
+.login-inner {
+  background: linear-gradient(180deg, #4a4238 0%, #2f2a25 100%);
+  border: 1px solid #8b6f2e;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(255, 200, 80, 0.2);
+  color: #fff;
+}
+.login-inner h6 {
+  border-bottom: 1px solid #a07a2a;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.login-inner .form-control,
+.login-inner .input-group-text {
+  background-color: #3a332d;
+  border: 1px solid #5c4b3b;
+  color: #f5e8c6;
+}
+.login-inner .form-control::placeholder {
+  color: #ffffff;
+}
+.login-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.login-links a:hover {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+/* 下方兩塊 info box */
+.hero-info {
+  margin-top: 100px;
+}
+.info-box {
+  background: linear-gradient(180deg, #3a3833 0%, #2b2924 100%);
+  border: 1px solid #5c4b3b;
+  border-radius: 6px;
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  min-height: 130px;
+  margin-bottom: 10px;
+}
+.info-box h5 {
+  color: #f1b50a;
+  border-bottom: 1px solid #555;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+}
+
+/* ==============================
+   🔷 下半部內容區（SoundPhoenix Style）
+============================== */
+.content-section {
+  background: linear-gradient(180deg, #1b1916 0%, #111 100%);
+  padding: 60px 0;
+}
+
+/* 三欄佈局 */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 25px;
+  margin: 0 80px;
+}
+
+/* 整體區塊：側邊 + 主內容 */
+.side-box,
+.content-box {
+  background: linear-gradient(180deg, #3a352f 0%, #1e1b17 100%);
+  border: 1px solid #4a3d2c;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  color: #e7e1cf;
+  overflow: hidden; /* 防止邊界重疊 */
+  padding: 0; /* 移除內距，讓內容連成一體 */
+}
+
+/* 標題條（與清單連成一體） */
+.side-box h5,
+.content-box h5 {
+  background: linear-gradient(180deg, #4a4238 0%, #2f2a25 100%);
+  color: #f1b50a;
+  border-bottom: 1px solid #f1b50a; 
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 1px rgba(255,255,255,0.1);
+}
+
+
+
+
+/* 清單區（每個項目同樣背景） */
+.side-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side-box ul li {
+  text-align: center;
+  padding: 8px 10px;
+  background: linear-gradient(180deg, #2f2b26 0%, #1d1a17 100%);
+  border-top: 1px solid #3a3228;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.side-box ul li:first-child {
+  border-top: none; /* 第一個不要邊框，避免重疊 */
+}
+
+.side-box ul li:hover {
+  background: linear-gradient(180deg, #3d352e 0%, #27221d 100%);
+  color: #f1b50a;
+  border-color: #5c4a2f;
+  box-shadow: inset 0 0 6px rgba(241,181,10,0.2);
+}
+
+/* 主內容分段區域（標題 + 文字塊連成一體） */
+.content-box-section {
+  background: linear-gradient(180deg, #2f2b26 0%, #1d1a17 100%);
+  border-top: 1px solid #3a3228;
+  padding: 18px 25px;
+  color: #d6c99c;
+  line-height: 1.6;
+  text-align: center;
+}
+.content-box-section:first-of-type {
+  border-top: none; /* 第一段不加線 */
+}
+.content-box-section:hover {
+  background: linear-gradient(180deg, #3d352e 0%, #27221d 100%);
+  color: #f1b50a;
+  transition: all 0.3s ease;
+}
+
+/* 頁尾 */
+.footer {
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 10px;
+}
+
