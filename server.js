@@ -26,7 +26,6 @@ server.get("/services", (req, res) => {
     //     { icon: 'fa-lock', title: 'Web Security', text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.' }
     // ]
     ServiceDB.find({},{_id:0}).then(results=>{
-       
         res.send(results);
     }).catch(error=>{
 
